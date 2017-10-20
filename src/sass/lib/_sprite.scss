@@ -1,0 +1,117 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+
+  At the bottom of this section, we provide information about the spritesheet itself
+  $spritesheet: width height image $spritesheet-sprites
+  */
+$basket-name: 'basket'
+$basket-x: 52px
+$basket-y: 20px
+$basket-offset-x: -52px
+$basket-offset-y: -20px
+$basket-width: 16px
+$basket-height: 14px
+$basket-total-width: 72px
+$basket-total-height: 52px
+$basket-image: 'sprite.png'
+$basket: 52px 20px -52px -20px 16px 14px 72px 52px 'sprite.png' 'basket'
+$discount-name: 'discount'
+$discount-x: 0px
+$discount-y: 0px
+$discount-offset-x: 0px
+$discount-offset-y: 0px
+$discount-width: 52px
+$discount-height: 52px
+$discount-total-width: 72px
+$discount-total-height: 52px
+$discount-image: 'sprite.png'
+$discount: 0px 0px 0px 0px 52px 52px 72px 52px 'sprite.png' 'discount'
+$icon_insta-name: 'icon_insta'
+$icon_insta-x: 52px
+$icon_insta-y: 0px
+$icon_insta-offset-x: -52px
+$icon_insta-offset-y: 0px
+$icon_insta-width: 20px
+$icon_insta-height: 20px
+$icon_insta-total-width: 72px
+$icon_insta-total-height: 52px
+$icon_insta-image: 'sprite.png'
+$icon_insta: 52px 0px -52px 0px 20px 20px 72px 52px 'sprite.png' 'icon_insta'
+$icon_mail-name: 'icon_mail'
+$icon_mail-x: 52px
+$icon_mail-y: 34px
+$icon_mail-offset-x: -52px
+$icon_mail-offset-y: -34px
+$icon_mail-width: 16px
+$icon_mail-height: 11px
+$icon_mail-total-width: 72px
+$icon_mail-total-height: 52px
+$icon_mail-image: 'sprite.png'
+$icon_mail: 52px 34px -52px -34px 16px 11px 72px 52px 'sprite.png' 'icon_mail'
+$spritesheet-width: 72px
+$spritesheet-height: 52px
+$spritesheet-image: 'sprite.png'
+$spritesheet-sprites: $basket $discount $icon_insta $icon_mail
+$spritesheet: 72px 52px 'sprite.png' $spritesheet-sprites
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+@mixin spriter-width($sprite)
+  width: nth($sprite, 5)/2
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+@mixin spriter-height($sprite)
+  height: nth($sprite, 6)/2
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+@mixin spriter-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)/2
+  $sprite-offset-y: nth($sprite, 4)/2
+  background-position: $sprite-offset-x  $sprite-offset-y
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(../img/#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+@mixin spriter($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+/*
+  The `sprites` mixin generates identical output to the CSS template
+    but can be overridden inside of SASS
+
+  @include sprites($spritesheet-sprites)
+  */
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
+@mixin spritesr($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include spriter($sprite)
