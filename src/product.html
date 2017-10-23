@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+	<title>Карточка продукта</title>
+//= includes/head.html
+
+<body>
+//= includes/svg.html
+//= includes/header.html
+
+<main>
+ <div class="wrap">
+    <div class="breadcrumb">
+      <a href="#">Главная</a>
+      <a href="#">Товары для дома</a>
+      <a href="#">Товары для кухни</a>
+      <a class="last" href="#">Чайник заварочный стеклянный "Eva" (1 л)</a>
+    </div>
+      <section class="product_card">
+        <div class="col photo_frame">
+        <div class="discount">-10%</div>
+         <ul class="main_image">
+            <li class="active">
+              <img src="img/product/prod1.jpg">
+            </li>
+            <li>
+              <img src="img/product/prod1.jpg">
+            </li>
+            <li>
+              <img src="img/product/prod1.jpg">
+            </li>
+          </ul>
+          <div class="thumbs">
+            <a href="img/product/prod1.jpg" class="show_image active">
+              <img src="img/product/prod1.jpg" alt="">
+            </a>
+            <a href="img/product/prod1.jpg" class="show_image">
+              <img src="img/product/prod1.jpg" alt="">
+            </a>
+            <a href="img/product/prod1.jpg" class="show_image">
+              <img src="img/product/prod1.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col description_frame">
+          <h1 class="product_name">Чайник заварочный стеклянный “Eva” (1 л)</h1>
+          <div class="product_price">22<sup>59</sup> BYN</div>
+          <div class="quantily_info js-number" data-max-number="100">
+            <button class="btn green increase js-minus-number">-</button>
+            <input type="text" min="1" name="quantity" value="1">
+            <button class="btn green decrease js-plus-number">+</button>
+          </div>
+          <div>
+            <input value="Добавить в корзину" id="button-cart" class="btn button_add" title="Добавить в корзину">	
+            <div class="favorites"></div>
+          </div>
+          <a id="fast_order" class="btn green fast_order cboxElement" to="#fast_order_form">Купить в один клик</a>
+          <ul class="attribute">
+            <li>Категория товара: <span class="val">Товары для дома</span></li>
+            <li>Размер: <span class="val">15см х 24 см х 24 см</span></li>
+            <li>Особые свойства: <span class="val">Раздает WiFi</span></li>
+            <li>Производитель: <span class="val">Китай</span></li>
+            <li>Комплектующие: <span class="val">Чайник, заварник, крышка</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="row global_characteristics">
+        <div class="col characteristics">
+         <div class="subtitle">Характеристики</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Характеристика</th>
+                <th>Значение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Характеристика1</td>
+                <td>Значение1</td>
+              </tr>
+              <tr>
+                <td>Характеристика2</td>
+                <td>Значение2</td>
+              </tr>
+              <tr>
+                <td>Характеристика3</td>
+                <td>Значение3</td>
+              </tr>
+              <tr>
+                <td>Характеристика4</td>
+                <td>Значение4</td>
+              </tr>
+              <tr>
+                <td>Характеристика5</td>
+                <td>Значение5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col description">
+          <div class="subtitle">Описание</div>
+          <p>Стеклянный заварочный чайник "Eva" прекрасно подойдет как для заваривания чая, так и для кипячения воды, охлаждения или подогрева напитка. Сквозь прозрачное стекло вы сможете оценить цвет напитка, особенно эффектно выглядят раскрывающиеся при заваривании вязаные чаи. Стеклянные заварники удобны в уходе, отлично отмываются от накипи и не теряют свой внешний вид.</p>
+          <p>Заварник изготовлен из термостойкого закаленного боросиликатного стекла. Ручка и крышка чайника тоже стеклянные. Чайник снабжен стеклянным фильтром. Эту модель заварника можно использовать на электрических плитах, на газовой плите можно использовать только с рассекателем пламени.</p>
+        </div>
+      </section>
+      <section class="related_products">
+      <div class="title">Вам понравится</div>
+      <div class="row slider_novelties js-slick">
+        <div class="col">
+          <div class="product_item not_available">
+            <a href="#" class="img_block">
+              <img src="img/products/prod1.jpg" alt="">
+              <div class="availability">Нет в наличии</div>
+              <div class="favorites"></div>
+            </a>
+            <div class="price">34 BYN</div>
+            <div class="name"><a href="#" class="link">Мишка-плутишка Розовый</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product_item">
+            <a href="#" class="img_block">
+              <div class="discount">-10%</div>
+              <img src="img/products/prod2.jpg" alt="">
+              <div class="availability"></div>
+              <div class="favorites favorites_on"></div>
+            </a>
+            <div class="price">34 BYN <span class="old_price">39 BYN</span></div>
+            <div class="name"><a href="#" class="link">Стакан для лопаток Му-му</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product_item">
+            <a href="#" class="img_block">
+              <img src="img/products/prod3.jpg" alt="">
+              <div class="availability"></div>
+              <div class="favorites"></div>
+            </a>
+            <div class="price">34 BYN <span class="old_price">39 BYN</span></div>
+            <div class="name"><a href="#" class="link">Семейство овечек-полотенец для ванны</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product_item">
+            <a href="#" class="img_block">
+              <img src="img/products/prod4.jpg" alt="">
+              <div class="availability"></div>
+              <div class="favorites"></div>
+            </a>
+            <div class="price">34 BYN</div>
+            <div class="name"><a href="#" class="link">Собачка-пенал</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product_item not_available">
+            <a href="#" class="img_block">
+              <img src="img/products/prod1.jpg" alt="">
+              <div class="availability">Нет в наличии</div>
+              <div class="favorites"></div>
+            </a>
+            <div class="price">34 BYN</div>
+            <div class="name"><a href="#" class="link">Мишка-плутишка Розовый</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product_item">
+            <a href="#" class="img_block">
+              <img src="img/products/prod2.jpg" alt="">
+              <div class="availability"></div>
+              <div class="favorites"></div>
+            </a>
+            <div class="price">34 BYN <span class="old_price">39 BYN</span></div>
+            <div class="name"><a href="#" class="link">Стакан для лопаток Му-му</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product_item">
+            <a href="#" class="img_block">
+              <img src="img/products/prod3.jpg" alt="">
+              <div class="availability"></div>
+              <div class="favorites"></div>
+            </a>
+            <div class="price">34 BYN <span class="old_price">39 BYN</span></div>
+            <div class="name"><a href="#" class="link">Семейство овечек-полотенец для ванны</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product_item">
+            <a href="#" class="img_block">
+              <img src="img/products/prod4.jpg" alt="">
+              <div class="availability"></div>
+              <div class="favorites"></div>
+            </a>
+            <div class="price">34 BYN</div>
+            <div class="name"><a href="#" class="link">Собачка-пенал</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+ </div>
+</main>
+
+//= includes/footer.html
+//= includes/scripts.html
+</body>
+</html>

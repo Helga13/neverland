@@ -117,17 +117,51 @@ input[type=checkbox]+label{
 }
 
 input[type=checkbox]:checked+label span::after{
-	content: '';
+  content: '';
   position: absolute;
   background: url('../img/icons/check.png') center no-repeat;
   height: 10px;
   width: 10px;
-	top: 3px;
-	left: 3px;
+  top: 3px;
+  left: 3px;
 }
 
 p {
   @include font-size(1.6);
+  @include line-height(1.9);
+  margin: 20px 0;
+}
+
+sub, 
+sup{
+  font-size: 65%;
+}
+
+table{
+  border: 1px solid #e5e2de;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 100%;
+  border-spacing: 0; 
+  margin: 20px 0;
+}
+
+thead{
+  font-size: 18px;
+  text-align: left;
+  background-color: #e5e2de;
+}
+
+th{
+  font-weight: normal;
+  padding: 8px 0 8px 10px;
+}
+
+tr{
+  td{
+    border-top: 1px solid #e5e2de;
+    padding: 5.5px 0 5.5px 10px;
+  }
 }
 
 .wrap {
@@ -157,14 +191,18 @@ p {
   font-family: 'AndikaRegular', $font-stack-helvetica;
   height: 37px;
   text-align: center;
-  background-color: #ab2c2b;
+  background-color: $red;
   color: #fff;
   display: inline-block;
   padding: 0 15px;
+  cursor: pointer;
   &:hover,
   &:focus,
   &:active {
     
+  }
+  &.green{
+    background-color: $green;
   }
 }
 
@@ -175,6 +213,15 @@ p {
   @include font-size(2.9);
   @include line-height(2.9);
   padding-bottom: 48px;
+}
+
+.subtitle{
+  color: #6d5439;
+  font-family: 'MerriweatherBold', $font-stack-helvetica;
+  text-align: center;
+  @include font-size(2.2);
+  text-align: left;
+  padding-bottom: 20px;
 }
 
 main{
@@ -229,6 +276,10 @@ main{
   padding-top: 7px;
   .right_block{
     float: right;
+  }
+  .basket > img{
+    width: 17px;
+    height: auto;
   }
 }
 
@@ -372,6 +423,7 @@ main{
   p{
     color: #fff;
     font-size: 14px;
+    margin: 0;
   }
   svg{
     width: 40px;
@@ -537,6 +589,56 @@ main{
       border-color: transparent;
     }
   }
+}
+
+#footer2{
+  background-color: #fff;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+}
+
+#cart{
+  display: inline-block;
+  padding: 6.5px 0;
+  .icon{
+    display: inline-block;
+    width: 47px;
+    text-align: center;
+  }
+}
+
+#cartName{
+  font-size: 22px;
+  line-height: 27px;
+  font-family: 'MerriweatherBold', $font-stack-helvetica;
+  margin-right: 36px;
+}
+
+#cart-total{
+  color: #777;
+  font-family: 'AlegreyaSansRegular', $font-stack-helvetica;
+  font-size: 18px;
+  line-height: 27px;
+  .value{
+    color: #6d5439;
+    font-family: 'AlegreyaSansBold', $font-stack-helvetica;
+    font-size: 22px;
+    padding: 0 42px 0 10px;
+  }
+}
+
+#checkoutBtn{
+  float: right;
+  margin: 0 10px;
+  font-size: 22px;
+  line-height: 44px;
+  height: 44px;
+  width: 100%;
+  max-width: 280px;
 }
 
 /* slick */
@@ -814,40 +916,6 @@ section{
       width: 100%;
     }
   }
-  .discount{
-    color: #fff;
-    font-size: 14px;
-    line-height: 52px;
-    font-family: 'UbuntuBold', $font-stack-helvetica;
-    text-align: center;
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    background: url('../img/icons/discount.png') center no-repeat;
-    top: 10px;
-    right: 10px;
-  }
-  .favorites{
-    border-radius: 50%;
-    background: url('../img/icons/hurt.svg') center no-repeat; 
-    background-color: #fff;
-    background-size: 20px;
-    position: absolute;
-    box-shadow: 0px 1px 3px 0px rgba(13, 38, 38, 0.3);
-    width: 40px;
-    height: 40px;
-    right: 15px;
-    bottom: 15px;
-    transition: background .3s ease-out;
-    &.favorites_on,
-    &:hover,
-    &:active,
-    &:focus{
-      background: url('../img/icons/hurt-hover.svg') center no-repeat; 
-      background-color: #fff;
-      background-size: 20px;
-    }
-  }
   .availability{
     position: absolute;
     color: #777;
@@ -880,6 +948,45 @@ section{
     img{
       opacity: .3;
     }
+  }
+}
+
+.discount{
+  color: #fff;
+  font-size: 14px;
+  line-height: 52px;
+  font-family: 'UbuntuBold', $font-stack-helvetica;
+  text-align: center;
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: url('../img/icons/discount.png') center no-repeat;
+  background-size: contain;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+.favorites{
+  border-radius: 50%;
+  background: url('../img/icons/hurt.svg') center no-repeat; 
+  background-color: #fff;
+  background-size: 20px;
+  position: absolute;
+  box-shadow: 0px 1px 3px 0px rgba(13, 38, 38, 0.3);
+  width: 40px;
+  height: 40px;
+  right: 15px;
+  bottom: 15px;
+  cursor: pointer;
+  transition: background .3s ease-out;
+  &.favorites_on,
+  &:hover,
+  &:active,
+  &:focus{
+    background: url('../img/icons/hurt-hover.svg') center no-repeat; 
+    background-color: #fff;
+    background-size: 20px;
   }
 }
 
@@ -967,4 +1074,179 @@ section{
 		float: right;
 		padding: 6px 0;
 	}
+}
+
+/* product card */
+
+.product_card{
+  margin-top: 90px;
+  border: 1px solid #e5e2de;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 0;
+  margin-bottom: 48px;
+}
+
+.photo_frame{
+  width: 43.64%;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .discount{
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 22px;
+    top: 25px;
+    right: 25px;
+  }
+  .thumbs{
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 0;
+  }
+  .show_image{
+    display: inline-block;
+    width: 20%;
+    padding: 5px;
+    text-align: center;
+    opacity: .7;
+    transition: opacity .3s ease-out;
+    &:before{
+      content: '';
+      padding-top: 20%;
+      float: left;
+    }
+    img{
+      width: 100%;
+    }
+    &.active,
+    &:hover,
+    &:focus,
+    &:active{
+      opacity: 1;
+    }
+  }
+  .main_image{
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    li{
+      display: none;
+      background-color: #fff;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      img{
+        width: 80%;
+      }
+      &.active{
+        display: block;
+      }
+    }
+  }
+}
+
+.description_frame{
+  width: 56.36%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  
+  .favorites{
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 18px;
+  }
+}
+
+.product_name{
+  color: #6d5439;
+  font-size: 22px;
+  line-height: 26px;
+  font-family: 'MerriweatherBold', $font-stack-helvetica;
+  padding-bottom: 44px;
+}
+
+.product_price{
+  color: #6d5439;
+  font-family: 'AlegreyaSansBold', $font-stack-helvetica;
+  font-size: 29px;
+  line-height: 35px;
+  padding-bottom: 30px;
+}
+
+.quantily_info{
+  margin: 13px 0;
+  .increase,
+  .decrease{
+    color: #fff;
+    font-size: 30px;
+    line-height: 30px;
+    height: 30px;
+    vertical-align: middle;
+    width: 60px;
+    cursor: pointer;
+  }
+  .increase{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .decrease{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  input[name="quantity"]{
+    vertical-align: middle;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    width: 90px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.button_add,
+.fast_order{
+  margin: 13px 0;
+  font-size: 22px;
+  line-height: 44px;
+  height: 44px;
+  padding: 0 10px;
+  max-width: 280px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.global_characteristics{
+  margin-bottom: 58px;
+}
+
+.attribute{
+  font-size: 16px;
+  line-height: 27px;
+  padding: 28px 0;
+  .val{
+    color: #777;
+  }
+}
+
+.characteristics{
+  width: 43.64%;
+  table{
+    td{
+      width: 50%;
+    }
+  }
+}
+
+.description{
+  width: 56.36%;
 }
