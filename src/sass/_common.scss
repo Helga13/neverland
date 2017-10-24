@@ -57,8 +57,24 @@ a {
 }
 
 ul {
+  margin: 20px 0;
+  overflow: hidden;
   li {
     list-style: none;
+    padding-left: 30px;
+    margin: 8px 0;
+    position: relative;
+    @include font-size(1.6);
+    @include line-height(1.9);
+    &:before{
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: $green;
+      left: 0;
+      top: 8px;
+    }
   }
 }
 
@@ -82,13 +98,19 @@ textarea{
 
 label {
   color: #777;
-	font-family: 'UbuntuRegular', $font-stack-helvetica;
-	font-size: 18px;
-	line-height: normal;
-	cursor: pointer;
+  font-family: 'UbuntuRegular', $font-stack-helvetica;
+  font-size: 18px;
+  line-height: normal;
+  cursor: pointer;
+  &.caption{
+    color: #333;
+    width: 100%;
+    display: inline-block;
+  }
 }
 
-input[type=checkbox]{
+input[type=checkbox],
+input[type=radio]{
 	position: absolute;
 	opacity: 0;
 	visibility: hidden;
@@ -97,8 +119,8 @@ input[type=checkbox]{
 input[type=checkbox]+label span{
 	display: inline-block;
   vertical-align: middle;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   margin-right: 4px;
   border: 1px solid #b7b1a9;
   border-radius: 5px;
@@ -122,8 +144,42 @@ input[type=checkbox]:checked+label span::after{
   background: url('../img/icons/check.png') center no-repeat;
   height: 10px;
   width: 10px;
-  top: 3px;
-  left: 3px;
+  top: 4px;
+  left: 4px;
+}
+
+input[type=radio]+label span{
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  border: 1px solid #b7b1a9;
+  border-radius: 5px;
+	box-shadow: inset 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.118);
+	background-color: #fff;
+	position: relative;
+  border-radius: 50%;
+  transition: border-color .3s ease-out;
+}
+
+input[type=radio]+label{
+	&:hover span,
+	&:active span,
+	&:focus span{
+		border-color: $green;
+	}
+}
+
+input[type=radio]:checked+label span::after{
+  content: '';
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: $green;
+  top: 4px;
+  left: 4px;
 }
 
 p {
@@ -144,12 +200,19 @@ table{
   width: 100%;
   border-spacing: 0; 
   margin: 20px 0;
+  .quantily_info{
+    margin: 0;
+  }
 }
 
 thead{
   font-size: 18px;
   text-align: left;
   background-color: #e5e2de;
+}
+
+tbody{
+  vertical-align: top;
 }
 
 th{
@@ -160,7 +223,19 @@ th{
 tr{
   td{
     border-top: 1px solid #e5e2de;
-    padding: 5.5px 0 5.5px 10px;
+    padding: 10px 0 10px 10px;
+//    width: 25%;
+    &:last-child{
+      padding-right: 10px;
+    }
+    &.img{
+      width: 150px;
+      img{
+        margin: 0 !important;
+        width: 100% !important;;
+        max-width: 110px;
+      }
+    } 
   }
 }
 
@@ -186,7 +261,7 @@ tr{
   border: none;
   border-radius: 5px;
   box-shadow: inset 0px -1px 2px 0px rgba(40, 18, 64, 0.3);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 37px;
   font-family: 'AndikaRegular', $font-stack-helvetica;
   height: 37px;
@@ -221,7 +296,17 @@ tr{
   text-align: center;
   @include font-size(2.2);
   text-align: left;
-  padding-bottom: 20px;
+  margin-bottom: 12px;
+}
+
+.caption{
+  font-size: 18px;
+  font-family: 'AlegreyaSansBold', $font-stack-helvetica;
+  padding: 8px 0;
+}
+
+.required{
+  color: $red;
 }
 
 main{
@@ -250,17 +335,22 @@ main{
 
 .tabs_caption{
   display: inline-block;
+  margin: 0;
   .tab{
     cursor: pointer;
     display: inline-block;
     color: $red;
     border-bottom: 1px dashed;
+    padding-left: 0;
     @include font-size(1.6);
     line-height: normal;
     opacity: .6;
     margin: 0 10px;
     &.active{
       opacity: 1;
+    }
+    &:before{
+      display: none;
     }
   }
 }
@@ -393,6 +483,15 @@ main{
   max-width: 140px;
   display: inline-block;
   position: relative;
+  .nav_item_dropdown{
+    margin: 0;
+    li{
+      padding-left: 0;
+      &:before{
+        display: none;
+      }
+    }
+  }
   &:first-child > a{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -403,7 +502,7 @@ main{
   }
   & > a{
     display: inline-block;
-    padding: 12px 10px;
+    padding: 10.5px 10px;
     width: 100%;
     background-color: $green;
     position: relative;
@@ -511,6 +610,16 @@ main{
     width: 25%;
     padding-bottom: 17px;
     padding-right: 15px;
+    ul{
+      margin: 0;
+    }
+    li{
+      margin: 0;
+      padding: 0;
+      &:before{
+        display: none;
+      }
+    }
      a{
       color: #d6e6e7;
       font-size: 16px;
@@ -528,6 +637,7 @@ main{
       input,
       .btn{
         width: 100%;
+        font-size: 16px;
       }
       input{
         margin-bottom: 8px;
@@ -655,6 +765,10 @@ main{
   width: 15px;
   height: 15px;
   margin: 10px;
+  &:before{
+    display: none;
+    display: none;
+  }
   button{
     border: 1px solid $red;
     border-radius: 50%;
@@ -681,7 +795,7 @@ main{
 .breadcrumb{
   font-size: 0;
   padding-top: 32px;
-  margin-bottom: -64px;
+//  margin-bottom: -64px;
   a{
     display: inline-block;
     background-color: $green;
@@ -716,6 +830,9 @@ main{
   li{
     display: inline-block;
     padding: 9px;
+    &:before{
+      display: none;
+    }
   }
 }
 
@@ -739,6 +856,7 @@ main{
   }
 }
 
+
 .sbHolder{
   background-color: #fff;
 	margin-right: 20px;
@@ -752,7 +870,7 @@ main{
 }
 
 .sbOptions{
-	background-color: transparent;
+  background-color: transparent;
   color: #777;
   top: 26px!important;
   border-top-left-radius: 0;
@@ -772,6 +890,10 @@ main{
 	}
   li{
     padding: 0;
+    margin: 0;
+    &:before{
+      display: none;
+    }
   }
 	a{
 		background-color: #fff;
@@ -803,9 +925,96 @@ main{
 	}
 }
 
+/* popup */
+
+.popup.overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(112,112,112,.7);
+  z-index: 5;
+  width: 100%;
+  overflow-y: auto;
+  .popup_content{
+    background-color: #fff;
+    position: absolute;
+    border: 1px solid #e5e2de;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 878px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    display: inline-block;
+    margin: 3% 0;
+    .popup_close{
+      float: right;
+      width: 18px;
+      height: 18px;
+    }
+    .subtitle{
+      text-align: center;
+    }
+    .field{
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    label{
+      margin-right: 20px;
+    }
+    .map{
+      margin-left: 18px;
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        left: -20px;
+        top: 0;
+        background: url('../img/icons/map.svg') left center no-repeat;
+      }
+    }
+    .field_group{
+      display: inline-block;
+      max-width: 290px;
+    }
+    textarea{
+      width: 100%;
+      resize: vertical;
+    }
+    .total_price{
+      text-align: right;
+      font-size: 18px;
+      font-family: 'AlegreyaSansBold', $font-stack-helvetica;
+    }
+    .button_group{
+      text-align: right;
+      padding: 20px 0;
+      .link{
+        font-size: 18px;
+        margin-right: 20px;
+      }
+      .btn{
+        width: 280px;
+      }
+    }
+  }
+}
+
+#field_index{
+  width: 90px;
+}
+
 /* main content */
 
 section{
+  margin-top: 24px;
   margin-bottom: 76px;
   @include clearfix;
 }
@@ -815,6 +1024,9 @@ section{
   .col{
     width: 25%;
     margin: 10px 0;
+  }
+  &.indent{
+    padding-top: 24px;
   }
 }
 
@@ -1079,7 +1291,7 @@ section{
 /* product card */
 
 .product_card{
-  margin-top: 90px;
+  margin-top: 26px;
   border: 1px solid #e5e2de;
   border-radius: 5px;
   background-color: #fff;
@@ -1184,6 +1396,8 @@ section{
 
 .quantily_info{
   margin: 13px 0;
+  font-size: 0;
+  width: 210px;
   .increase,
   .decrease{
     color: #fff;
@@ -1227,12 +1441,22 @@ section{
 
 .global_characteristics{
   margin-bottom: 58px;
+  .subtitle{
+    padding-bottom: 20px;
+  }
 }
 
 .attribute{
   font-size: 16px;
   line-height: 27px;
   padding: 28px 0;
+  margin: 0;
+  li{
+    padding: 0;
+    &:before{
+      display: none;
+    }
+  }
   .val{
     color: #777;
   }
@@ -1249,4 +1473,30 @@ section{
 
 .description{
   width: 56.36%;
+}
+
+.text_block{
+  img{
+    margin: 0 20px 20px 0;
+    width: 23.73%;
+    float: left;
+  }
+}
+
+.img_simple{
+  width: 23.73%;
+  img{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.col.text_block{
+  width: 76.27%;
+}
+
+.link_list{
+  .link{
+    margin-right: 18px;
+  }
 }

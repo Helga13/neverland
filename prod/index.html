@@ -708,11 +708,69 @@
             </span>
           </div>
         </div>
-        <a id="checkoutBtn" class="btn" href="https://neverland.by/index.php?route=checkout/simplecheckout">Оформить заказ</a>
+        <a id="checkoutBtn" class="btn js-popup" data-id="checkoutForm" href="https://neverland.by/index.php?route=checkout/simplecheckout">Оформить заказ</a>
       </div>
     </div>
   </div>
 </footer>
+<!--popup-->
+<div class="overlay popup" id="checkoutForm">
+	<div class="popup_content">
+	<a href="#" class="popup_close"><img src="img/icons/close.svg" alt=""></a>
+      <form action="/">
+        <div class="subtitle">Оформление заказа</div>
+        <div class="field">
+          <div class="caption">Регион доставки</div>
+          <input type="radio" id="city" name="delivery_area" checked>
+          <label for="city"><span></span>Доставка по Минску</label>
+          <input type="radio" id="country" name="delivery_area">
+          <label for="country"><span></span>Доставка почтой по Беларуси</label>
+        </div>
+        <div class="field">
+          <div class="caption">Способ доставки</div>
+          <input type="radio" id="city" name="delivery" checked>
+          <label for="city"><span></span>Доставка</label>
+          <input type="radio" id="country" name="delivery">
+          <label for="country"><span></span>Самовывоз из <a href="https://yandex.by/maps/157/minsk/?ll=27.579519%2C53.916271&z=17&mode=search&ol=biz&oid=24149136125" target="_blank" class="link map">ТЦ Силуэт</a></label>
+        </div>
+        <div class="field">
+          <div class="field_group">
+            <label for="field_name" class="caption">Имя <span class="required">*</span></label>
+            <input type="text" id="field_name" required placeholder="Текст по умолчанию">
+          </div>
+          <div class="field_group">
+            <label for="field_address" class="caption">Адрес <span class="required">*</span></label>
+            <input type="text" id="field_address" required placeholder="Текст по умолчанию">
+          </div>
+          <div class="field_group">
+            <label for="field_index" class="caption">Индекс <span class="required">*</span></label>
+            <input type="text" id="field_index" required placeholder="220000">
+          </div>
+        </div>
+        <div class="field">
+          <div class="field_group">
+            <label for="field_email" class="caption">E-mail</label>
+            <input type="text" id="field_email" placeholder="Введите e-mail">
+          </div>
+          <div class="field_group">
+            <label for="field_phone" class="caption">Телефон</label>
+            <input type="text" id="field_phone" placeholder="+375 ( __ ) ___ - __ - __">
+          </div>
+        </div>
+        <div class="field">
+          <label for="field_message" class="caption">Комментарий к заказу</label>
+          <textarea name="" id="" rows="3" placeholder="Комментарий к заказу"></textarea>
+        </div>
+        <div class="total_price">
+          Заказ на сумму: 24<sup>90</sup> BYN
+        </div>
+        <div class="button_group">
+          <a href="#" class="link">Вернуться к покупкам</a>
+          <button type="submit" class="btn">Отправить данные</button>
+        </div>
+      </form>
+	</div>
+</div>
 <script src="js/common.js"></script>
 </body>
 </html>

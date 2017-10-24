@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+	<title>Текстовая страница</title>
+//= includes/head.html
+
+<body>
+//= includes/svg.html
+//= includes/header.html
+
+<main>
+ <div class="wrap">
+    <div class="breadcrumb">
+      <a href="#">Главная</a>
+      <a class="last" href="#">Текстовая страница</a>
+    </div>
+    <section class="row">
+     <div class="title">Текстовая страница</div>
+      <div class="col img_simple">
+        <img src="img/img_v.jpg" alt="">
+        <img src="img/img_h.jpg" alt="">
+        <div class="link_list">
+          <div class="subtitle">Информация</div>
+          <a href="#" class="link">Контакты</a>
+          <a href="#" class="link">Покупателям</a>
+          <a href="#" class="link">Текстовая страница</a>
+          <a href="#" class="link">Условия</a>
+          <a href="#" class="link">Важная информация</a>
+          <a href="#" class="link">Текстиль</a>
+        </div>
+      </div>
+      <div class="col text_block">
+          <div>
+            <div class="subtitle">Основной текст</div>
+            <p>Стеклянный заварочный чайник "Eva" прекрасно подойдет как для заваривания чая, так и для кипячения воды, охлаждения или подогрева напитка. Сквозь прозрачное стекло вы сможете оценить цвет напитка, особенно эффектно выглядят раскрывающиеся при заваривании вязаные чаи. Стеклянные заварники удобны в уходе, отлично отмываются от накипи и не теряют свой внешний вид.</p>
+            <p>Заварник изготовлен из термостойкого закаленного боросиликатного стекла. Ручка и крышка чайника тоже стеклянные. Чайник снабжен стеклянным фильтром. Эту модель заварника можно использовать на электрических плитах, на газовой плите можно использовать только с рассекателем пламени.</p>
+          </div>
+          <div>
+            <div class="subtitle">Оформление списков</div>
+            <ul>
+              <li>Картофель, капуста, лук и морковь.</li>
+              <li>Курица или куриные окорочка, немного свинины и (или) говядины. Свежемороженая рыба (один день в неделю стоит делать рыбным</li>
+              <li>1 или 2 десятка яиц.</li>
+              <li>Кефир, молоко и сметана.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="subtitle">Таблица</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Характеристика</th>
+                  <th>Значение</th>
+                  <th>Значение</th>
+                  <th>Значение</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Характеристика1</td>
+                  <td>Значение1</td>
+                  <td>Значение1</td>
+                  <td>Значение1</td>
+                </tr>
+                <tr>
+                  <td>Характеристика2</td>
+                  <td>Значение2</td>
+                  <td>Значение2</td>
+                  <td>Значение2</td>
+                </tr>
+                <tr>
+                  <td>Характеристика3</td>
+                  <td>Значение3</td>
+                  <td>Значение3</td>
+                  <td>Значение3</td>
+                </tr>
+                <tr>
+                  <td>Характеристика4</td>
+                  <td>Значение4</td>
+                  <td>Значение4</td>
+                  <td>Значение4</td>
+                </tr>
+                <tr>
+                  <td>Характеристика5</td>
+                  <td>Значение5</td>
+                  <td>Значение5</td>
+                  <td>Значение5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th class="img">Фото</th>
+                  <th>Значение</th>
+                  <th>Значение</th>
+                  <th class="num">Количество</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="img"><img src="img/catalog/forHome.jpg" alt=""></td>
+                  <td>Значение1</td>
+                  <td>Второе Значение 1</td>
+                  <td class="num">
+                    <div class="quantily_info js-number" data-max-number="100">
+                      <button class="btn green increase js-minus-number">-</button>
+                      <input type="text" min="1" name="quantity" value="1">
+                      <button class="btn green decrease js-plus-number">+</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="subtitle">Оформление списков</div>
+            <div class="caption">Поле для ввода</div>
+            <input type="text" value="Текст по умолчанию">
+            <div class="caption">Селектор</div>
+            <select name="" class="js-select">
+              <option>Сортировка по умолчанию</option>
+              <option>Цена (по возрастанию)</option>
+              <option>Цена (по убыванию)</option>
+            </select>
+            <div class="caption">Элементы выбора</div>
+            <div>
+              <input type="radio" id="radio1" name="radio">
+              <label for="radio1"><span></span>Только товары в наличии</label>
+              <br>
+              <input type="radio" id="radio2" name="radio">
+              <label for="radio2"><span></span>Только товары в наличии</label>
+            </div>
+            <p></p>
+            <div>
+              <input type="checkbox" id="checkbox1">
+              <label for="checkbox1"><span></span>Только товары в наличии</label>
+            </div>
+            <p></p>
+            <a href="#" class="btn">Нажми на меня</a>
+          </div>
+      </div> 
+    </section>  
+ </div>
+</main>
+
+//= includes/footer.html
+//= includes/scripts.html
+</body>
+</html>
