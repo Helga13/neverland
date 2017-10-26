@@ -558,20 +558,19 @@ $(document).ready(function () {
   
   $('.js-slick').slick({
     dots: true,
-//    autoplay: true,
+    arrows: false,
+    autoplay: true,
     autoplaySpeed: 4000,
     slidesToShow: 4,
     slidesToScroll: 4,
-//    responsive: [
-//      {
-//        breakpoint: 1024,
-//        settings: {
-//          slidesToShow: 3,
-//          slidesToScroll: 3,
-//          infinite: true,
-//          dots: true
-//        }
-//      },
+    responsive: [
+      {
+        breakpoint: 993,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
 //      {
 //        breakpoint: 600,
 //        settings: {
@@ -586,7 +585,7 @@ $(document).ready(function () {
 //          slidesToScroll: 1
 //        }
 //      }
-//    ]
+    ]
   });
   
   $('.js-select').selectbox();

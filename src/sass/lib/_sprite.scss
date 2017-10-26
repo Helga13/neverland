@@ -10,17 +10,28 @@
   At the bottom of this section, we provide information about the spritesheet itself
   $spritesheet: width height image $spritesheet-sprites
   */
+$arr_back-name: 'arr_back'
+$arr_back-x: 82px
+$arr_back-y: 42px
+$arr_back-offset-x: -82px
+$arr_back-offset-y: -42px
+$arr_back-width: 19px
+$arr_back-height: 11px
+$arr_back-total-width: 107px
+$arr_back-total-height: 92px
+$arr_back-image: 'sprite.png'
+$arr_back: 82px 42px -82px -42px 19px 11px 107px 92px 'sprite.png' 'arr_back'
 $arr_down-name: 'arr_down'
 $arr_down-x: 82px
-$arr_down-y: 53px
+$arr_down-y: 64px
 $arr_down-offset-x: -82px
-$arr_down-offset-y: -53px
+$arr_down-offset-y: -64px
 $arr_down-width: 12px
 $arr_down-height: 9px
 $arr_down-total-width: 107px
-$arr_down-total-height: 82px
+$arr_down-total-height: 92px
 $arr_down-image: 'sprite.png'
-$arr_down: 82px 53px -82px -53px 12px 9px 107px 82px 'sprite.png' 'arr_down'
+$arr_down: 82px 64px -82px -64px 12px 9px 107px 92px 'sprite.png' 'arr_down'
 $basket-name: 'basket'
 $basket-x: 82px
 $basket-y: 0px
@@ -29,20 +40,20 @@ $basket-offset-y: 0px
 $basket-width: 25px
 $basket-height: 22px
 $basket-total-width: 107px
-$basket-total-height: 82px
+$basket-total-height: 92px
 $basket-image: 'sprite.png'
-$basket: 82px 0px -82px 0px 25px 22px 107px 82px 'sprite.png' 'basket'
+$basket: 82px 0px -82px 0px 25px 22px 107px 92px 'sprite.png' 'basket'
 $check-name: 'check'
-$check-x: 82px
-$check-y: 62px
-$check-offset-x: -82px
-$check-offset-y: -62px
+$check-x: 0px
+$check-y: 82px
+$check-offset-x: 0px
+$check-offset-y: -82px
 $check-width: 10px
 $check-height: 10px
 $check-total-width: 107px
-$check-total-height: 82px
+$check-total-height: 92px
 $check-image: 'sprite.png'
-$check: 82px 62px -82px -62px 10px 10px 107px 82px 'sprite.png' 'check'
+$check: 0px 82px 0px -82px 10px 10px 107px 92px 'sprite.png' 'check'
 $discount-name: 'discount'
 $discount-x: 0px
 $discount-y: 0px
@@ -51,9 +62,9 @@ $discount-offset-y: 0px
 $discount-width: 82px
 $discount-height: 82px
 $discount-total-width: 107px
-$discount-total-height: 82px
+$discount-total-height: 92px
 $discount-image: 'sprite.png'
-$discount: 0px 0px 0px 0px 82px 82px 107px 82px 'sprite.png' 'discount'
+$discount: 0px 0px 0px 0px 82px 82px 107px 92px 'sprite.png' 'discount'
 $icon_insta-name: 'icon_insta'
 $icon_insta-x: 82px
 $icon_insta-y: 22px
@@ -62,25 +73,25 @@ $icon_insta-offset-y: -22px
 $icon_insta-width: 20px
 $icon_insta-height: 20px
 $icon_insta-total-width: 107px
-$icon_insta-total-height: 82px
+$icon_insta-total-height: 92px
 $icon_insta-image: 'sprite.png'
-$icon_insta: 82px 22px -82px -22px 20px 20px 107px 82px 'sprite.png' 'icon_insta'
+$icon_insta: 82px 22px -82px -22px 20px 20px 107px 92px 'sprite.png' 'icon_insta'
 $icon_mail-name: 'icon_mail'
 $icon_mail-x: 82px
-$icon_mail-y: 42px
+$icon_mail-y: 53px
 $icon_mail-offset-x: -82px
-$icon_mail-offset-y: -42px
+$icon_mail-offset-y: -53px
 $icon_mail-width: 16px
 $icon_mail-height: 11px
 $icon_mail-total-width: 107px
-$icon_mail-total-height: 82px
+$icon_mail-total-height: 92px
 $icon_mail-image: 'sprite.png'
-$icon_mail: 82px 42px -82px -42px 16px 11px 107px 82px 'sprite.png' 'icon_mail'
+$icon_mail: 82px 53px -82px -53px 16px 11px 107px 92px 'sprite.png' 'icon_mail'
 $spritesheet-width: 107px
-$spritesheet-height: 82px
+$spritesheet-height: 92px
 $spritesheet-image: 'sprite.png'
-$spritesheet-sprites: $arr_down $basket $check $discount $icon_insta $icon_mail
-$spritesheet: 107px 82px 'sprite.png' $spritesheet-sprites
+$spritesheet-sprites: $arr_back $arr_down $basket $check $discount $icon_insta $icon_mail
+$spritesheet: 107px 92px 'sprite.png' $spritesheet-sprites
 
 /*
   The provided mixins are intended to be used with the array-like variables

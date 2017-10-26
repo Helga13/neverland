@@ -262,14 +262,14 @@ tr{
   border-radius: 5px;
   box-shadow: inset 0px -1px 2px 0px rgba(40, 18, 64, 0.3);
   font-size: 18px;
-  line-height: 37px;
+//  line-height: 37px;
   font-family: 'AndikaRegular', $font-stack-helvetica;
-  height: 37px;
+//  height: 37px;
   text-align: center;
   background-color: $red;
   color: #fff;
   display: inline-block;
-  padding: 0 15px;
+  padding: 9.5px 15px;
   cursor: pointer;
   &:hover,
   &:focus,
@@ -357,13 +357,22 @@ main{
 
 /* header */
 
+.burger_menu{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
 .logo_block{
   width: 300px;
+  float: left;
 }
 
 .heder_top{
   width: calc(100% - 300px);
   padding-top: 8px;
+  display: inline-block;
   .right_block{
     float: right;
   }
@@ -467,6 +476,7 @@ main{
     font-family: 'AndikaRegular', $font-stack-helvetica;
     font-size: 14px;
     padding: 4px 10px;
+    margin: 0;
   }
 }
 
@@ -492,6 +502,7 @@ main{
   max-width: 140px;
   display: inline-block;
   position: relative;
+  vertical-align: top;
   .nav_item_dropdown{
     margin: 0;
     li{
@@ -501,13 +512,15 @@ main{
       }
     }
   }
+  &:first-child,
   &:first-child > a{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
   }
+  &:last-child,
   &:last-child > a{
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
   & > a{
     display: inline-block;
@@ -516,6 +529,7 @@ main{
     background-color: $green;
     position: relative;
     z-index: 1;
+    height: 100%;
     transition: background-color .3s ease-out;
     &:hover,
     &:active,
@@ -619,7 +633,7 @@ main{
     width: 25%;
     padding-bottom: 17px;
     padding-right: 15px;
-    ul{
+    ul:not(.socials){
       margin: 0;
     }
     li{
@@ -665,6 +679,7 @@ main{
       display: inline-block;
       width: 25%;
       margin-bottom: 10px;
+      padding: 0 10px;
       img{
         width: 100%;
       }
@@ -711,6 +726,7 @@ main{
 }
 
 #footer2{
+  display: none;
   background-color: #fff;
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -1030,6 +1046,7 @@ section{
 
 .category_block{
   padding: 80px 0 78px;
+  text-align: center;
   .col{
     width: 25%;
     margin: 10px 0;
@@ -1111,6 +1128,8 @@ section{
     img{
       width: 10px;
       height: 10px;
+      float: none;
+      margin: 0;
     }
   }
 }
@@ -1422,6 +1441,8 @@ section{
     vertical-align: middle;
     width: 60px;
     cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .increase{
     border-top-right-radius: 0;

@@ -1,25 +1,126 @@
-@media only screen and (max-width : 1600px) {
-
-}
-
-
-@media only screen and (max-width : 1366px) {
-
-}
-
-@media only screen and (max-width : 1279px) {
-
-}
-
-@media only screen and (max-width : 1023px) {
-
+@media only screen and (max-width : 1200px) {
+  .wrap{
+    max-width: 992px;
+  }
+  .category_item{
+    padding-bottom: 116px;
+    &:active .cat_items, 
+    &:focus .cat_items, 
+    &:hover .cat_items{
+      max-height: 208px;
+    }
+    .text_block{
+      padding: 8px 10px;
+    }
+    .title{
+      padding: 8px;
+      margin: 10px 0;
+    }
+    .img_block{
+      height: 309px;
+    }
+  }
+  .basket, 
+  .personal, 
+  .wishlist{
+    margin-left: 20px;
+  }
+  .tabs_content{
+    padding: 0 10px;
+  }
+  .tabs_caption .tab{
+    margin: 0 6px;
+  }
+  .top_nav{
+    text-align: center;
+  }
+  .search_block{
+    margin: 0;
+    .caption{
+      text-align: left;
+    }
+  }
+  .catalog_nav__item{
+    height: 99px;
+    &:active .nav_item_dropdown, 
+    &:focus .nav_item_dropdown, 
+    &:hover .nav_item_dropdown, 
+    &>a:active+.nav_item_dropdown, 
+    &>a:focus+.nav_item_dropdown, 
+    &>a:hover+.nav_item_dropdown{
+      top: 99px;
+    }
+  }
+  .category_block{
+    .col{
+      width: 33.333%;
+    }
+  }
+  
 }
 
 @media only screen and (max-width : 992px) {
+  
+  .wrap{
+    max-width: 767px;
+  }
+  .category_block .col{
+    width: 33.333%;
+  }
+  .category_item .img_block {
+    height: 250px;
+  }
+  .category_item .title{
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .heder_top .delivery{
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+  }
+  .heder_top .tabs_content{
+    padding-left: 0;
+  }
+  .footer_bottom .footer_item{
+    padding-left: 15px;
+    padding-right: 0;
+    &.contacts{
+      float: none;
+      padding-left: 0;
+      padding-right: 15px;
+    }
+  }
+  .footer_bottom .heading{
+    font-size: 19px;
+    padding-bottom: 16px;
+  }
+  .footer_bottom .socials{
+    margin: 0;
+    li{
+      padding-left: 0;
+    }
+  }
+  .products_block{
+    .col{
+      width: 33.333%;
+    }
+  }
+  .breadcrumb a{
+    &:not(:nth-last-child(2)){
+      display: none;
+    }
+    border-radius: 5px;
+    padding-left: 36px;
+    background: url('../img/icons/arr_back.png') left 9px center no-repeat, $green;
+  }
 
 }
 
 @media only screen and (max-width : 767px) {
+  .search_block .caption{
+    display: none;
+  }
 
 }
 
