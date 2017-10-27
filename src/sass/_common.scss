@@ -357,6 +357,10 @@ main{
 
 /* header */
 
+header .wrap{
+  position: relative;
+}
+
 .burger_menu{
   display: inline-block;
   width: 20px;
@@ -367,11 +371,13 @@ main{
 .logo_block{
   width: 300px;
   float: left;
+  padding-right: 10px;
 }
 
 .heder_top{
   width: calc(100% - 300px);
   padding-top: 8px;
+  padding-left: 10px;
   display: inline-block;
   .right_block{
     float: right;
@@ -494,6 +500,17 @@ main{
   border-radius: 5px;
   font-size: 0;
   background-color: $green;
+  position: relative;
+}
+
+.catalog_nav_close{
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
 }
 
 .catalog_nav__item{
@@ -512,8 +529,8 @@ main{
       }
     }
   }
-  &:first-child,
-  &:first-child > a{
+  &:nth-child(2),
+  &:nth-child(2) > a{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
   }
@@ -551,7 +568,7 @@ main{
     width: 40px;
     height: 40px;
   }
-  &:nth-child(n+5){
+  &:nth-child(n+6){
     .nav_item_dropdown{
       right: 0;
     }
@@ -1293,6 +1310,9 @@ section{
       }
     }
   }
+}
+.subscribe{
+  display: none;
 }
 
 .products_block{

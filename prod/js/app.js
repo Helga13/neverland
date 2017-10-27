@@ -13,7 +13,7 @@ $(document).ready(function () {
   
   // slider
   
-  $('.js-slick').slick({
+  $('.slider_novelties.js-slick').slick({
     dots: true,
     arrows: false,
     autoplay: true,
@@ -28,20 +28,45 @@ $(document).ready(function () {
           slidesToScroll: 3,
         }
       },
-//      {
-//        breakpoint: 600,
-//        settings: {
-//          slidesToShow: 2,
-//          slidesToScroll: 2
-//        }
-//      },
-//      {
-//        breakpoint: 480,
-//        settings: {
-//          slidesToShow: 1,
-//          slidesToScroll: 1
-//        }
-//      }
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+  
+  $('.slider_socials.js-slick').slick({
+    dots: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 993,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      }
     ]
   });
   
@@ -124,5 +149,28 @@ $(document).ready(function () {
     $('.popup_content').click(function(e) {
 		e.stopPropagation();
 	}); 
+  
+  // popup
+  
+   $('.js-burger_menu').click(function (e) {
+        e.preventDefault();
+        $('.catalog_nav, .overlay_nav').fadeIn(300);
+        $('body').css('overflow', 'hidden');  
+    });
+    $('.overlay_nav').click(function (e) {
+        e = event || window.event
+        if (e.target == this) {
+            $(this).fadeOut(100);
+            $('.catalog_nav').fadeOut(100);
+            $('body').css('overflow', 'auto'); 
+        }
+    });
+	$('.catalog_nav_close').click(function (e) {
+         e.preventDefault();
+           $(this).parent('.catalog_nav').fadeOut(100);
+           $('.overlay_nav').fadeOut(100);
+           $('body').css('overflow', 'auto'); 
+    });
+  
   
 })
